@@ -1,6 +1,6 @@
 # Tornado.cash trees governance proposal [![Build Status](https://github.com/tornadocash/tornado-trees-proposal/workflows/build/badge.svg)](https://github.com/tornadocash/tornado-trees-proposal/actions)
 
-This repo deploys governance proposal for [TornadoTrees](https://github.com/tornadocash/tornado-trees) update. It significantly reduces the cost of updating tornado merkle trees by offloading onchain updates to zkSNARKs.
+This repo deploys governance proposal for [TornadoTrees](https://github.com/tornadocashdev/tornado-trees) update. It significantly reduces the cost of updating tornado merkle trees by offloading onchain updates to zkSNARKs.
 
 ## Audits
 
@@ -23,7 +23,7 @@ $ vi .env
 ## testing
 
 ```bash
-$ docker build . -t tornadocash/tornado-trees-proposal && docker run -v `pwd`/proofsCache:/app/proofsCache tornadocash/tornado-trees-proposal
+$ docker build . -t tornadocashdev/tornado-trees-proposal && docker run -v `pwd`/proofsCache:/app/proofsCache tornadocashdev/tornado-trees-proposal
 ```
 
 ## mainnet instructions
@@ -36,8 +36,8 @@ $ docker build . -t tornadocash/tornado-trees-proposal && docker run -v `pwd`/pr
 ### #proposal creation
 
 1. go to tornado-tress repo
-1. `docker build . -t tornadocash/tornado-trees` you will need 50GB RAM
-1. `docker run --rm -it --name tornadoTrees tornadocash/tornado-trees bash` just leave it and go to the next steps
+1. `docker build . -t tornadocashdev/tornado-trees` you will need 50GB RAM
+1. `docker run --rm -it --name tornadoTrees tornadocashdev/tornado-trees bash` just leave it and go to the next steps
 1. `docker cp tornadoTrees:/app/artifacts/circuits/* backup`
 1. send the backup folder to telegram
 
@@ -61,14 +61,14 @@ $ docker build . -t tornadocash/tornado-trees-proposal && docker run -v `pwd`/pr
 
 #### root updater
 
-1. `git clone https://github.com/tornadocash/tornado-root-updater.git -b migration && cd tornado-root-updater`
+1. `git clone https://github.com/tornadocashdev/tornado-root-updater.git -b migration && cd tornado-root-updater`
 1. edit `.env`
 1. run `generateCacheEvents` (uncomment last lines there 1 by 1)
-1. `docker build . -t tornadocash/tornado-root-updater` should be run on the same server as for `tornado-trees`
+1. `docker build . -t tornadocashdev/tornado-root-updater` should be run on the same server as for `tornado-trees`
 1. run both
 
-- `docker run --rm -e MIGRATION_TYPE=deposit tornadocash/tornado-root-updater`
-- `docker run --rm -e MIGRATION_TYPE=withdrawal tornadocash/tornado-root-updater`
+- `docker run --rm -e MIGRATION_TYPE=deposit tornadocashdev/tornado-root-updater`
+- `docker run --rm -e MIGRATION_TYPE=withdrawal tornadocashdev/tornado-root-updater`
 
 1. update ENS for proxy, trees
 2. after finish, create the `deposits.json` and `withdrawals.json` cache using `allEvents` from `events.js` and move it to the `snark` branch
