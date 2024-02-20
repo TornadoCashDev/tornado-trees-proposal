@@ -4,8 +4,8 @@ This repo deploys governance proposal for [TornadoTrees](https://github.com/torn
 
 ## Audits
 
-- [ABDK](audits/ABDK_proposal_audit.pdf)
-- ZeroPool [1](./audits/ZeroPool_tornado_proxy_audit.pdf) [2](./audits/ZeroPool_tornado_trees_audit.pdf)
+- [ABDK](https://tornadoeth.cash/audits/ABDK_proposal_audit.pdf)
+- ZeroPool [1](https://tornadoeth.cash/audits/ZeroPool_tornado_proxy_audit.pdf) [2](https://tornadoeth.cash/audits/ZeroPool_tornado_trees_audit.pdf)
 
 ## Dependencies
 
